@@ -1,32 +1,50 @@
-$purple: rgb(192, 0, 166)
-$gray: #8f745111
+@use 'radiobuttons'
+
+$light-grey: #746b6b34
+$purple: 	#B80064
+$background-color: 	#F0ECE9
+// $gray: #8f745111
 $font-stack: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
 $header-font-size: 42px
 
-
-
-
 *
     box-sizing: border-box
-body 
-    font-family: $font-stack
-    background-color: $gray
 
-input, textarea
+body
+    font-family: $font-stack
+    background-color: $background-color
+    margin: 0 0 80px 0
+    color: gray
+
+input[type=text], textarea
+    font-size: 26px
+    font-weight: 200
+    color: gray
     display: block
     border: none
-    margin: 7px 0 7px 0
-
-textarea
+    margin: 10px 0 0px 0
     width: 100%
     max-width: 100%
-    height: 300px
-    max-height: 300px
+    padding: 10px
+
+input:focus, textarea:focus
+    // outline-width: 2px
+    outline-color: $purple
+    // background-color: rgba(192, 0, 166, 0.01)
+
+input[type=text]
+    height: 60px
+
+textarea
+    height: 263px
+    min-height: 60px
+    max-height: 480px
+    resize: vertical
 
 label
     color: gray
 
-.container 
+.container
     margin: 0 auto
     padding-left: 15px
     padding-right: 15px
@@ -36,33 +54,49 @@ label
     margin: 0 auto
     width: auto
     display: grid
-    grid-template-columns:45% min-content 45%
+    grid-template-columns: 49% 2% 49%
+
+.radio-container
+    padding-left: 5px
+    padding-bottom: 10px
+    label, input
+        display: inline-block
 
 .separator
-    width: 1px
+    margin: 0 auto
+    width: 2px
     height: 100%
-    background-color: #bebebe
+    background-color: $light-grey
 
 .form-cell
     width: 80%
     margin: 0 auto
-    
 
-
-@media (min-width: 760px)
+@media (min-width: 790px)
     .container
-        max-width: 730px
-    .form-container
-        padding-left: 30px
-        padding-right: 30px
+        max-width: 760px
+    .form-cell
+        width: 85%
 
-
-@media (min-width: 1200px)
+@media (min-width: 1280px)
     .container
-        max-width: 1170px
+        max-width: 1250px
+    .form-cell
+        width: 80%
+
+@media (max-width: 789.8px)
+    .form-cell
+        width: 90%
+
+@media (max-width: 620px)
     .form-container
-        padding-left: 60px
-        padding-right: 60px
+        display: block
+    .separator
+        width: 100%
+        height: 2px
+        margin: 20px auto
+    .form-cell
+        width: 100%
 
 .header
     padding-top: 70px
@@ -73,10 +107,61 @@ label
     color: $purple
     font-size: $header-font-size
     width: 9em
+    max-width: 100%
+
+.req-field
+    font-size: smaller
+    span
+        color: $purple
+        font-size: 24px
 
 .underline
     height: ($header-font-size / 3)
     width: 1.3em
     border-bottom: 1px solid $purple
-    
 
+.text-input
+    padding-bottom: 20px
+
+.submit-button-container
+    text-align: right
+
+.submit-button
+    position: relative
+    width: 160px
+    height: 60px
+    text-transform: uppercase
+    background-color: $purple
+    border: none
+    color: white
+    padding: 0
+    text-decoration: none
+    cursor: pointer
+    box-shadow: 0px 0px 7px 2px #0000003f
+
+.submit-button:hover
+    box-shadow: 0px 0px 7px 5px #0000003f
+
+.submit-button:focus
+    box-shadow: none
+    border: none
+    outline-width: 0
+    transform: translate(0px, 2px)
+
+.submit-button-text
+    font-size: 14px
+    font-weight: 400
+    letter-spacing: 1.5px
+    position: absolute
+    top: 22px
+    left: 30px
+
+.submit-button-text::after
+    content: url(chevron-right-solid.svg)
+    height: 8px
+    width: 8px
+
+    position: absolute
+    display: block
+    left: 90px
+    top: 1px

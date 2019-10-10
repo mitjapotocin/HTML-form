@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Specto Task - Form</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- <script src="https://kit.fontawesome.com/31b1c58af2.js" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
@@ -18,45 +19,78 @@
                 </div>
                 <div class="underline"></div>
             </div>
-            <form action="">
-                <div class="form-container">
-                    <div class="form-cell">
-                        <div>
+            <div id="form">
+                <form onSubmit="return handleClick()">
+                    <div class="form-container">
+                        <div class="form-cell">
                             <label for="interests">
                                 Ich interesiere mich für ...
                             </label>
-                            <textarea type="text" id="interests"></textarea>
+                            <div class="grabber-container">
+                                <textarea type="text" name="interests">
+                            
 
+                            </textarea>
+                            <div class="req-field">
+                                <span>&#8902; </span> Required field
+                            </div>
+                        </div>
+                        <div class="separator"></div>
+                        <div class="form-cell">
+                            <!-- !!! label ni taprav -->
+
+                            <div class="radio-container">
+                                <div>
+                                    Anrede
+                                </div>
+
+                                <label for="radio1" class="radio-button">Frau
+                                    <input type="radio" name="gender" id="radio1" value="frau" />
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label for="radio2" class="radio-button">Herr
+                                    <input type="radio" name="gender" id="radio2" value="herr" />
+                                    <span class="checkmark"></span>
+
+                                </label>
+                                <label for="radio3" class="radio-button">Keine Angabe
+                                    <input type="radio" name="gender" id="radio3" value="keine angabe"
+                                        checked="checked" />
+                                    <span class="checkmark"></span>
+
+                                </label>
+                            </div>
+                            <div class="text-input">
+                                <label for="name">
+                                    Ihr Name
+                                </label>
+                                <input type="text" name="fullname">
+                                <div class="req-field">
+                                    <span>&#8902; </span> Required field
+                                </div>
+                            </div>
+                            <div>
+                                <label for="imail">
+                                    Ihr E-Mail-Adresse
+                                </label>
+                                <input type="text" name="email">
+                                <div class="req-field">
+                                    <span>&#8902; </span> Required field
+                                </div>
+                            </div>
+
+                            <div class="submit-button-container">
+                                <button class="submit-button" type="submit">
+                                    <span class="submit-button-text">
+                                        Send
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
-                    <div class="separator">
-                    
-                    </div>
-                    <div class="form-cell">
-                        <label for="interests">
-                            Ich interesiere mich für ...
-                        </label>
-                        <input type="text" id="interests">
-
-                    </div>
-                </div>
-                
-
-                </div>
-
-
-
-        </div>
-        </form>
-
-
-
-
-        </div>
-
+                </form>
+            </div>
     </main>
-
-
 </body>
 
 </html>
