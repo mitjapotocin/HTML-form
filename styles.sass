@@ -1,0 +1,82 @@
+$purple: rgb(192, 0, 166)
+$gray: #8f745111
+$font-stack: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
+$header-font-size: 42px
+
+
+
+
+*
+    box-sizing: border-box
+body 
+    font-family: $font-stack
+    background-color: $gray
+
+input, textarea
+    display: block
+    border: none
+    margin: 7px 0 7px 0
+
+textarea
+    width: 100%
+    max-width: 100%
+    height: 300px
+    max-height: 300px
+
+label
+    color: gray
+
+.container 
+    margin: 0 auto
+    padding-left: 15px
+    padding-right: 15px
+    width: 100%
+
+.form-container
+    margin: 0 auto
+    width: auto
+    display: grid
+    grid-template-columns:45% min-content 45%
+
+.separator
+    width: 1px
+    height: 100%
+    background-color: #bebebe
+
+.form-cell
+    width: 80%
+    margin: 0 auto
+    
+
+
+@media (min-width: 760px)
+    .container
+        max-width: 730px
+    .form-container
+        padding-left: 30px
+        padding-right: 30px
+
+
+@media (min-width: 1200px)
+    .container
+        max-width: 1170px
+    .form-container
+        padding-left: 60px
+        padding-right: 60px
+
+.header
+    padding-top: 70px
+    padding-bottom: 70px
+    text-transform: uppercase
+    letter-spacing: 6px
+    font-weight: 200
+    color: $purple
+    font-size: $header-font-size
+    width: 9em
+
+.underline
+    height: ($header-font-size / 3)
+    width: 1.3em
+    border-bottom: 1px solid $purple
+    
+
