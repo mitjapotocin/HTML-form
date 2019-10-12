@@ -7,53 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Specto Task - Form</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- <script src="https://kit.fontawesome.com/31b1c58af2.js" crossorigin="anonymous"></script> -->
 </head>
 
 <body>
-    <main>
-        <div class="container">
-            <div id="header" class="header">
-                <div>
-                    Schreiben sie uns eine nachricht
-                </div>
-                <div class="underline"></div>
+    <div class="container">
+        <header id="header" class="header">
+            <div>
+                Schreiben sie uns eine nachricht
             </div>
-            <div id="form">
-                <form onSubmit="return handleClick()">
+            <div class="underline"></div>
+        </header>
+        <main>
+            <form id="message-form">
+                <fieldset form="message-form">
                     <div class="form-container">
                         <div class="form-cell">
-                            <label for="interests">
-                                Ich interesiere mich für ...
-                            </label>
                             <div>
-                                <textarea type="text" name="interests"></textarea>
-                                <div class="grabber"></div>
+                                Ich interesiere mich für ...
                             </div>
-                            <div class="req-field">
-                                <span>&#8902; </span> Required field
+                            <div>
+                                <textarea type="text" name="message" required></textarea>
+                                <div class="grabber"></div>
+                                <div id="req-message" class="req-field">
+                                    <span>&#8902; </span> Required field
+                                </div>
                             </div>
                         </div>
                         <div class="separator"></div>
                         <div class="form-cell">
-                            <!-- !!! label ni taprav -->
-
                             <div class="radio-container">
                                 <div>
                                     Anrede
                                 </div>
 
                                 <label for="radio1" class="radio-button">Frau
-                                    <input type="radio" name="gender" id="radio1" value="frau" />
+                                    <input type="radio" name="gender" id="radio1" value="Frau" />
                                     <span class="checkmark"></span>
                                 </label>
                                 <label for="radio2" class="radio-button">Herr
-                                    <input type="radio" name="gender" id="radio2" value="herr" />
+                                    <input type="radio" name="gender" id="radio2" value="Herr" />
                                     <span class="checkmark"></span>
 
                                 </label>
                                 <label for="radio3" class="radio-button">Keine Angabe
-                                    <input type="radio" name="gender" id="radio3" value="keine angabe"
+                                    <input type="radio" name="gender" id="radio3" value="Keine Angabe"
                                         checked="checked" />
                                     <span class="checkmark"></span>
 
@@ -63,33 +60,38 @@
                                 <label for="name">
                                     Ihr Name
                                 </label>
-                                <input type="text" name="fullname">
-                                <div class="req-field">
+                                <input type="name" name="name" required>
+                                <div id="req-name" class="req-field">
                                     <span>&#8902; </span> Required field
                                 </div>
                             </div>
-                            <div>
-                                <label for="imail">
+                            <div class="text-input">
+                                <label for="email">
                                     Ihr E-Mail-Adresse
                                 </label>
-                                <input type="text" name="email">
-                                <div class="req-field">
+                                <input pattern="[^@\s]+@[^@\s]+\.[^@\s]+" type="email" name="email" required>
+                                <div id="req-email" class="req-field">
                                     <span>&#8902; </span> Required field
+
                                 </div>
                             </div>
 
                         </div>
+                        <div class="submit-button-container form-cell">
+                            <button class="submit-button" type="submit">
+                                <span class="submit-button-text">
+                                    Send
+                                </span>
+                            </button>
+                        </div>
                     </div>
-                                    <div class="submit-button-container">
-                                        <button class="submit-button" type="submit">
-                                            <span class="submit-button-text">
-                                                Send
-                                            </span>
-                                        </button>
-                                    </div>
-                </form>
-            </div>
-    </main>
+
+                </fieldset>
+            </form>
+        </main>
+    </div>
 </body>
+
+<script src="script.js"></script>
 
 </html>

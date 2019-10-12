@@ -1,7 +1,7 @@
 @use 'radiobuttons'
 
 $light-grey: #746b6b34
-$purple: 	#B80064
+$purple: 	#b80065
 $background-color: 	#F0ECE9
 // $gray: #8f745111
 $font-stack: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
@@ -16,13 +16,22 @@ body
     margin: 0 0 80px 0
     color: gray
 
-input[type=text], textarea
+fieldset
+    display: block
+    margin-left: 0
+    margin-right: 0
+    padding-top: 0
+    padding-bottom: 0
+    padding-left: 0
+    padding-right: 0
+    border: 0
+
+input[type=name], input[type=email], textarea
     font-size: 26px
     font-weight: 200
     color: gray
     display: block
     border: none
-    margin: 10px 0 0px 0
     width: 100%
     max-width: 100%
     padding: 10px
@@ -32,12 +41,15 @@ input:focus, textarea:focus
     outline-color: $purple
     // background-color: rgba(192, 0, 166, 0.01)
 
-input[type=text]
+input[type=name], input[type=email]
     height: 60px
+    margin-top: 8px
 
 textarea
-    height: 263px
-    min-height: 60px
+    margin-top: 12px
+    overflow: hidden
+    height: 264px
+    min-height: 264px
     max-height: 480px
     resize: vertical
     border-right: 5px solid white
@@ -62,7 +74,6 @@ label
     right: -5px
     bottom: 3px
     transform: rotate(135deg)
-   
 
 .grabber::after
     content: ''
@@ -89,10 +100,12 @@ label
     width: auto
     display: grid
     grid-template-columns: 1fr min-content 1fr
+    grid-template-rows: 1fr min-content
 
 .radio-container
-    padding-left: 5px
-    padding-bottom: 10px
+    margin: 5px 0px 10px 5px
+    // margin-left: 5px
+    // margin-bottom: 10px
     label, input
         display: inline-block
 
@@ -100,27 +113,28 @@ label
     margin: 0 auto
     width: 2px
     height: 100%
+    margin-left: 5px
     background-color: $light-grey
 
 .form-cell
-    width: 80%
+    width: 82%
     margin: 0 auto
 
 @media (min-width: 790px)
     .container
         max-width: 760px
     .form-cell
-        width: 85%
+        width: 88%
 
 @media (min-width: 1280px)
     .container
         max-width: 1250px
     .form-cell
-        width: 80%
+        width: 82%
 
 @media (max-width: 789.8px)
     .form-cell
-        width: 90%
+        width: 92%
 
 @media (max-width: 620px)
     .form-container
@@ -144,10 +158,14 @@ label
     max-width: 100%
 
 .req-field
+    position: relative
+    top: -9px
     font-size: smaller
     span
+        position: relative
+        top: 3px
         color: $purple
-        font-size: 24px
+        font-size: 28px
 
 .underline
     height: ($header-font-size / 3)
@@ -155,9 +173,12 @@ label
     border-bottom: 1px solid $purple
 
 .text-input
-    padding-bottom: 20px
+    margin-top: 5px
+
 
 .submit-button-container
+    margin-top: 40px
+    grid-area: 2 / 4 / 2 / 2
     text-align: right
 
 .submit-button
@@ -173,14 +194,11 @@ label
     cursor: pointer
     box-shadow: 0px 0px 7px 2px #0000003f
 
-.submit-button:hover
-    box-shadow: 0px 0px 7px 3px #0000004f
+// .submit-button:hover
+//     box-shadow: 0px 0px 7px 3px #0000004f
 
 .submit-button:focus
-    box-shadow: none
-    border: none
-    outline-width: 0
-    transform: scale(0.97, 0.97)
+    outline: none
 
 .submit-button-text
     font-size: 14px
@@ -194,8 +212,51 @@ label
     content: url(chevron-right-solid.svg)
     height: 8px
     width: 8px
-
     position: absolute
     display: block
     left: 90px
     top: 1px
+
+.disabled
+    opacity: 0.5
+
+.submit-button:disabled
+    box-shadow: none
+    border: none
+    cursor: default
+
+.warning::after
+    position: relative
+    content: ""
+    top: 0px
+    left: -105px
+    text-align: right
+    opacity: 0.4
+    background-color: $purple
+    color: black
+    padding: 0 5px 0 100px
+    border: 5px solid $purple
+    border-radius: 8px
+    animation: apear 2s
+
+@keyframes apear
+    0%
+        opacity: 0
+    100%
+        animation-timing-function: ease-out
+        opacity: 0.4
+
+.email-warning::after
+    position: relative
+    content: ""
+    top: 0px
+    left: -105px
+    text-align: right
+    opacity: 0.4
+    background-color: blue
+    color: black
+    padding: 0 5px 0 100px
+    border: 5px solid $purple
+    border-radius: 8px
+    animation: apear 2s
+     

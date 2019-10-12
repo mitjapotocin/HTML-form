@@ -31,19 +31,7 @@ $background-color: 	#F0ECE9
     background-color: white
     border-radius: 50%
 
-    /* On mouse-over, add a grey background color */
-// .radio-button:hover input + .checkmark
-//     background-color: rgba(192, 0, 166, 0.075)
-
-// .radio-button:hover input + .checkmark
-//     background-color: #ffffff
-
-/* When the radio button is checked, add a blue background */
-.radio-button input:checked + .checkmark
-    background-color: $background-color
-
-/* Create the indicator (the dot/circle - hidden when not checked) */
-.checkmark:after
+.checkmark::after
     content: ""
     position: absolute
     display: block
@@ -54,12 +42,10 @@ $background-color: 	#F0ECE9
     border-radius: 50%
     background: $background-color
 
-.radio-button input:hover + .checkmark:after
-    background: $purple
-    opacity: 0.4
 
-
-/* Show the indicator (dot/circle) when checked */
+.radio-button input:checked + .checkmark
+    background-color: $background-color
+    
 .radio-button input:checked + .checkmark:after
     display: block
     top: 4px
@@ -68,6 +54,15 @@ $background-color: 	#F0ECE9
     height: 10px
     border-radius: 50%
     background: $purple
-
-/* Style the indicator (dot/circle) */
-// .radio-button .checkmark:after
+    animation: checkmark-opacity 0.4s
+   
+@keyframes checkmark-opacity
+    0%
+        transform: translate3d(0,0,0)
+        animation-timing-function: ease-out
+    50%
+        transform: translate3d(0,-16px,0)    
+        animation-timing-function: ease-in
+    
+        
+      
