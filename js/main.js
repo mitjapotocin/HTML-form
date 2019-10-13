@@ -60,7 +60,7 @@ function consoleLogSuccess(inputValues) {
   Object.keys(inputValues).forEach(key => {
     console.log(
       `%c${key}%c: "${inputValues[key]}"`,
-      "color:white; background-color:orange",
+      "color:white; background-color:orange; border-radius:3px",
       ""
     );
   });

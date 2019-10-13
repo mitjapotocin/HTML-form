@@ -1,6 +1,6 @@
 @use 'radiobuttons'
 
-$light-grey: #746b6b34
+$light-gray: #746b6b34
 $purple: 	#b80065
 $background-color: 	#F0ECE9
 $font-stack: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
@@ -26,8 +26,9 @@ fieldset
     border: 0
 
 input[type=name], input[type=email], textarea
-    font-size: 26px
+    font-size: 24px
     font-weight: 200
+    font-family: inherit
     color: gray
     display: block
     border: none
@@ -38,7 +39,6 @@ input[type=name], input[type=email], textarea
 input:focus, textarea:focus
     outline-color: $purple
     outline-width: 3px
-
 
 input[type=name], input[type=email]
     height: 60px
@@ -88,6 +88,15 @@ label
     bottom: 4px
     transform: rotate(135deg)
 
+//Prevents custom grabber being displayed awkward in Firefox, when form is disabled.
+@-moz-document url-prefix()
+    textarea:disabled + .grabber::before
+        display: none
+
+    textarea:disabled
+        border-right: 0
+        border-bottom: 0
+
 .container
     margin: 0 auto
     padding-left: 15px
@@ -102,7 +111,7 @@ label
     grid-template-rows: 1fr min-content
 
 .radio-container
-    margin: 5px 0px 10px 5px
+    margin: 5px 0px 32px 5px
     label, input
         display: inline-block
 
@@ -111,7 +120,7 @@ label
     width: 2px
     height: 100%
     margin-left: 5px
-    background-color: $light-grey
+    background-color: $light-gray
 
 .form-cell
     width: 82%
@@ -170,7 +179,6 @@ label
 .text-input
     margin-top: 5px
 
-
 .submit-button-container
     margin-top: 40px
     grid-area: 2 / 4 / 2 / 2
@@ -192,6 +200,9 @@ label
 .submit-button:focus
     outline: none
 
+.submit-button:disabled
+    box-shadow: none
+
 .submit-button-text
     font-size: 14px
     font-weight: 400
@@ -201,7 +212,7 @@ label
     left: 30px
 
 .submit-button-text::after
-    content: url(img/chevron-right-solid.svg)
+    content: url(../img/chevron-right-solid.svg)
     height: 8px
     width: 8px
     position: absolute
@@ -211,4 +222,3 @@ label
 
 .disabled
     opacity: 0.5
-

@@ -2,7 +2,6 @@
   position: relative;
   padding-left: 35px;
   margin-top: 20px;
-  margin-bottom: 20px;
   margin-right: 60px;
   cursor: pointer;
   -webkit-user-select: none;
@@ -55,10 +54,10 @@
   height: 10px;
   border-radius: 50%;
   background: #c000a6;
-  animation: checkmark-opacity 0.4s;
+  animation: checkmark-jump 0.4s;
 }
 
-@keyframes checkmark-opacity {
+@keyframes checkmark-jump {
   0% {
     transform: translate3d(0, 0, 0);
     animation-timing-function: ease-out;
@@ -91,8 +90,9 @@ fieldset {
 }
 
 input[type=name], input[type=email], textarea {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 200;
+  font-family: inherit;
   color: gray;
   display: block;
   border: none;
@@ -160,6 +160,16 @@ label {
   transform: rotate(135deg);
 }
 
+@-moz-document url-prefix() {
+  textarea:disabled + .grabber::before {
+    display: none;
+  }
+
+  textarea:disabled {
+    border-right: 0;
+    border-bottom: 0;
+  }
+}
 .container {
   margin: 0 auto;
   padding-left: 15px;
@@ -176,7 +186,7 @@ label {
 }
 
 .radio-container {
-  margin: 5px 0px 10px 5px;
+  margin: 5px 0px 32px 5px;
 }
 .radio-container label, .radio-container input {
   display: inline-block;
@@ -289,6 +299,10 @@ label {
   outline: none;
 }
 
+.submit-button:disabled {
+  box-shadow: none;
+}
+
 .submit-button-text {
   font-size: 14px;
   font-weight: 400;
@@ -299,7 +313,7 @@ label {
 }
 
 .submit-button-text::after {
-  content: url(img/chevron-right-solid.svg);
+  content: url(../img/chevron-right-solid.svg);
   height: 8px;
   width: 8px;
   position: absolute;
