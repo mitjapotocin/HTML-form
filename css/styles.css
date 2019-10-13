@@ -1,7 +1,7 @@
 .radio-button {
   position: relative;
   padding-left: 35px;
-  margin-top: 20px;
+  margin-top: 16px;
   margin-right: 60px;
   cursor: pointer;
   -webkit-user-select: none;
@@ -186,7 +186,7 @@ label {
 }
 
 .radio-container {
-  margin: 5px 0px 32px 5px;
+  margin: 5px 0px 30px 5px;
 }
 .radio-container label, .radio-container input {
   display: inline-block;
@@ -245,11 +245,11 @@ label {
   padding-top: 70px;
   padding-bottom: 70px;
   text-transform: uppercase;
-  letter-spacing: 6px;
+  letter-spacing: 8px;
   font-weight: 200;
   color: #b80065;
-  font-size: 42px;
-  width: 9em;
+  font-size: 39px;
+  width: 10em;
   max-width: 100%;
 }
 
@@ -266,8 +266,8 @@ label {
 }
 
 .underline {
-  height: 14px;
-  width: 1.3em;
+  height: 20px;
+  width: 50px;
   border-bottom: 1px solid #b80065;
 }
 
@@ -324,6 +324,10 @@ label {
 
 .disabled {
   opacity: 0.5;
+}
+
+.input-description {
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=styles.css.map */
