@@ -3,7 +3,6 @@
 $light-grey: #746b6b34
 $purple: 	#b80065
 $background-color: 	#F0ECE9
-// $gray: #8f745111
 $font-stack: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
 $header-font-size: 42px
 
@@ -37,9 +36,8 @@ input[type=name], input[type=email], textarea
     padding: 10px
 
 input:focus, textarea:focus
-    // outline-width: 2px
     outline-color: $purple
-    // background-color: rgba(192, 0, 166, 0.01)
+
 
 input[type=name], input[type=email]
     height: 60px
@@ -104,8 +102,6 @@ label
 
 .radio-container
     margin: 5px 0px 10px 5px
-    // margin-left: 5px
-    // margin-bottom: 10px
     label, input
         display: inline-block
 
@@ -140,9 +136,7 @@ label
     .form-container
         display: block
     .separator
-        width: 100%
-        height: 2px
-        margin: 20px auto
+        display: none
     .form-cell
         width: 100%
 
@@ -194,9 +188,6 @@ label
     cursor: pointer
     box-shadow: 0px 0px 7px 2px #0000003f
 
-// .submit-button:hover
-//     box-shadow: 0px 0px 7px 3px #0000004f
-
 .submit-button:focus
     outline: none
 
@@ -220,43 +211,3 @@ label
 .disabled
     opacity: 0.5
 
-.submit-button:disabled
-    box-shadow: none
-    border: none
-    cursor: default
-
-.warning::after
-    position: relative
-    content: ""
-    top: 0px
-    left: -105px
-    text-align: right
-    opacity: 0.4
-    background-color: $purple
-    color: black
-    padding: 0 5px 0 100px
-    border: 5px solid $purple
-    border-radius: 8px
-    animation: apear 2s
-
-@keyframes apear
-    0%
-        opacity: 0
-    100%
-        animation-timing-function: ease-out
-        opacity: 0.4
-
-.email-warning::after
-    position: relative
-    content: ""
-    top: 0px
-    left: -105px
-    text-align: right
-    opacity: 0.4
-    background-color: blue
-    color: black
-    padding: 0 5px 0 100px
-    border: 5px solid $purple
-    border-radius: 8px
-    animation: apear 2s
-     
