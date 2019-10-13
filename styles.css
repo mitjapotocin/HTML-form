@@ -103,6 +103,7 @@ input[type=name], input[type=email], textarea {
 
 input:focus, textarea:focus {
   outline-color: #b80065;
+  outline-width: 3px;
 }
 
 input[type=name], input[type=email] {
@@ -194,13 +195,13 @@ label {
   margin: 0 auto;
 }
 
-@media (min-width: 790px) {
+@media (min-width: 860px) {
   .container {
-    max-width: 760px;
+    max-width: 830px;
   }
 
   .form-cell {
-    width: 88%;
+    width: 90%;
   }
 }
 @media (min-width: 1280px) {
@@ -212,9 +213,9 @@ label {
     width: 82%;
   }
 }
-@media (max-width: 789.8px) {
+@media (max-width: 859.8px) {
   .form-cell {
-    width: 92%;
+    width: 93%;
   }
 }
 @media (max-width: 620px) {
@@ -298,7 +299,7 @@ label {
 }
 
 .submit-button-text::after {
-  content: url(chevron-right-solid.svg);
+  content: url(img/chevron-right-solid.svg);
   height: 8px;
   width: 8px;
   position: absolute;
