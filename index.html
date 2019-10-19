@@ -19,6 +19,28 @@
             <div class="underline"></div>
         </header>
         <main>
+            <div id="popup" class="popup" style="display: none;">
+                <div class="popup-content">
+                    <div class="popup-text">
+                        Thank you! <br>
+                        Your message has been sent.
+                    </div>
+
+                    <div class="popup-button-container">
+                        <button class="popup-button" onclick="sendAnotherMsg()">
+                            <span class="popup-button-text">
+                                Do it again!
+                            </span>
+                        </button>
+
+                        <button class="popup-button">
+                            <a href="https://github.com/mitjapotocin/HTML-form" class="popup-button-text github">
+                                Visit repository
+                            </a>
+                        </button>
+                    </div>
+                </div>
+            </div>
             <form id="message-form">
                 <fieldset form="message-form">
                     <div class="form-container">

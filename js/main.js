@@ -18,21 +18,33 @@ document.getElementById("message-form").onsubmit = e => {
   } else if (!emailValid(email)) {
     console.log("%cEmail not valid.", "color: red");
   } else {
-    disableForm();
+    toggleDisableForm();
     consoleLogSuccess(inputValues);
   }
+  togglePopup();
 };
+
+function sendAnotherMsg() {
+  document.querySelector('[name="message"]').value = "";
+  document.querySelector('[name="name"]').value = "";
+  document.querySelector('[name="email"]').value = "";
+  toggleDisableForm();
+  togglePopup();
+}
+
+function togglePopup() {
+  const popup = document.getElementById("popup");
+  popup.style.display = popup.style.display === "none" ? "block" : "none";
+}
 
 function emailValid(email) {
   var re = /[^@\s]+@[^@\s]+\.[^@\s]+/;
   return re.test(String(email).toLowerCase());
 }
 
-function disableForm() {
-  document
-    .querySelector('fieldset[form="message-form"]')
-    .classList.add("disabled");
-  document.querySelector('fieldset[form="message-form"]').disabled = true;
+function toggleDisableForm() {
+  const form = document.querySelector('fieldset[form="message-form"]')
+  form.disabled = !form.disabled
 }
 
 function allInputsFilled(data) {
