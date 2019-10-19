@@ -80,8 +80,6 @@ function consoleLogSuccess(inputValues) {
   });
 }
 
-
-
 document.querySelector('[name="message"]').addEventListener("input", () => {
   const textarea = document.querySelector('[name="message"]');
   const grabber = document.getElementById('grabber');
