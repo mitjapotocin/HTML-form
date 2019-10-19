@@ -11,6 +11,7 @@
 }
 .radio-button input {
   position: absolute;
+  bottom: 0px;
   opacity: 0;
   cursor: pointer;
 }
@@ -46,10 +47,6 @@
   background-color: #F0ECE9;
 }
 
-.radio-button input:focus + .checkmark {
-  outline: auto 3px #c000a6;
-}
-
 .radio-button input:checked + .checkmark:after {
   display: block;
   top: 4px;
@@ -71,6 +68,10 @@
     animation-timing-function: ease-in;
   }
 }
+.radio-button input:focus + span {
+  box-shadow: 0 0 3px 1px #c000a6;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -191,7 +192,7 @@ label {
 .radio-container {
   margin: 5px 0px 30px 5px;
 }
-.radio-container label, .radio-container input {
+.radio-container label {
   display: inline-block;
 }
 

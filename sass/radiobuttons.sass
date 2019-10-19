@@ -14,6 +14,7 @@ $background-color: 	#F0ECE9
     user-select: none
     input
         position: absolute
+        bottom: 0px
         opacity: 0
         cursor: pointer
 
@@ -43,9 +44,6 @@ $background-color: 	#F0ECE9
 
 .radio-button input:checked + .checkmark
     background-color: $background-color
-    
-.radio-button input:focus + .checkmark                
-    outline:  auto 3px $purple
 
 .radio-button input:checked + .checkmark:after
     display: block
@@ -65,8 +63,5 @@ $background-color: 	#F0ECE9
         transform: translate3d(0,-16px,0)
         animation-timing-function: ease-in
 
-// .radio-button input:checked\
-// .radio-button-outline
-//     outline: $purple auto 3px
-//     outline-style: 
-//     // box-shadow: 0px 0px 0px 3px $purple inset
+.radio-button input:focus + span
+    box-shadow: 0 0 3px 1px $purple
