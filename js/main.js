@@ -79,3 +79,17 @@ function consoleLogSuccess(inputValues) {
     );
   });
 }
+
+
+
+document.querySelector('[name="message"]').addEventListener("input", () => {
+  const textarea = document.querySelector('[name="message"]');
+  const grabber = document.getElementById('grabber');
+  if (textarea.clientHeight < textarea.scrollHeight) {
+    grabber.classList.remove("grabber");
+    textarea.classList.remove("textarea-border");
+  }else{ 
+    grabber.classList.add("grabber");
+    textarea.classList.add("textarea-border");
+  }
+});
