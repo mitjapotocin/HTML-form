@@ -21,6 +21,7 @@ document.getElementById("message-form").onsubmit = e => {
     toggleDisableForm();
     consoleLogSuccess(inputValues);
   }
+
   togglePopup();
 };
 
@@ -28,6 +29,7 @@ function sendAnotherMsg() {
   document.querySelector('[name="message"]').value = "";
   document.querySelector('[name="name"]').value = "";
   document.querySelector('[name="email"]').value = "";
+  document.querySelector('[id="radio3"]').checked = "checked";
   toggleDisableForm();
   togglePopup();
 }
@@ -43,8 +45,8 @@ function emailValid(email) {
 }
 
 function toggleDisableForm() {
-  const form = document.querySelector('fieldset[form="message-form"]')
-  form.disabled = !form.disabled
+  const form = document.querySelector('fieldset[form="message-form"]');
+  form.disabled = !form.disabled;
 }
 
 function allInputsFilled(data) {
