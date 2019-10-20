@@ -9,7 +9,7 @@
 50%{transform:translate3d(0,-16px,0);-webkit-animation-timing-function:ease-in;animation-timing-function:ease-in}
 }.radio-button input:focus+span{box-shadow:0 0 3px 1px #c000a6}.popup{height:100%;width:100%;position:fixed;z-index:10;top:0;left:0;background-color:rgba(0,0,0,0.1);overflow:hidden}
 @-webkit-keyframes popup{0%{transform:translate3d(0,-200%,0)}
-}@keyframes popup{0%{transform:translate3d(0,-200%,0)}}.popup-content{position:relative;padding:15px 15px 0 15px;top:50%;margin:0 auto;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;max-width:95%;box-shadow:1px 2px 6px rgba(0,0,0,0.5);background:rgba(255,255,255,0.445);border-radius:5px;transform:translate3d(0,-50%,0);-webkit-animation:popup .8s;animation:popup .8s}
+}@keyframes popup{0%{transform:translate3d(0,-200%,0)}}.popup-content{position:relative;padding:15px 15px 0 15px;top:50%;margin:0 auto;width:-webkit-fit-content;width:-moz-fit-content;width:fit-content;max-width:95%;box-shadow:1px 2px 6px rgba(0,0,0,0.5);background:rgba(255,255,255,0.6);border-radius:5px;transform:translate3d(0,-50%,0);-webkit-animation:popup .8s;animation:popup .8s}
 .popup-text{font-size:22px;font-weight:300;margin:20px 20px 0 20px;color:green}.popup-text::after{content:url(../img/ok-64.gif);height:22px;width:22px;opacity:1;-webkit-animation:make-visible 5s;animation:make-visible 5s}
 @-webkit-keyframes make-visible{0%{opacity:0}15%{opacity:0}
 }@keyframes make-visible{0%{opacity:0}15%{opacity:0}}.popup-button-container{margin-top:35px;margin-bottom:30px;display:inline-block;text-align:center}

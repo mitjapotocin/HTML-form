@@ -80,14 +80,21 @@ function consoleLogSuccess(inputValues) {
   });
 }
 
-document.querySelector('[name="message"]').addEventListener("input", () => {
+//Hides custom grabber, when side scrollbar appears.
+document.querySelector('[name="message"]').addEventListener("input", toggleTextareaGrabber);
+
+const observer = new MutationObserver(function(mutations) {
+  mutations.forEach(mutation => toggleTextareaGrabber())
+})
+
+observer.observe(document.querySelector('[name="message"]'), { attributes: true, attributeFilter: ['style']});
+
+function toggleTextareaGrabber() {
   const textarea = document.querySelector('[name="message"]');
-  const grabber = document.getElementById('grabber');
-  if (textarea.clientHeight < textarea.scrollHeight) {
-    grabber.classList.remove("grabber");
-    textarea.classList.remove("textarea-border");
-  }else{ 
-    grabber.classList.add("grabber");
-    textarea.classList.add("textarea-border");
-  }
-});
+  const grabber = document.getElementById("grabber");
+  
+  textarea.scrollHeight <= textarea.clientHeight
+    ? grabber.classList.add("grabber")
+    : grabber.classList.remove("grabber");
+  
+}
